@@ -1,4 +1,6 @@
-FROM node:lts-alpine
+ARG ARCH="amd64"
+FROM multiarch/alpine:$ARCH-latest-stable
+RUN apk add --update nodejs npm --repository=http://dl-cdn.alpinelinux.org/alpine/latest-stable/main/
 
 ENV NODE_ENV production
 
